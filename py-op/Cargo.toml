@@ -1,0 +1,24 @@
+[package]
+name = "py-op"
+version = "0.1.0"
+repository = "https://github.com/virtuehive/janu-flow-examples"
+homepage = "http://tawedge.com"
+authors = ["kBrewok <wprayudi@gmail.com>",]
+edition = "2018"
+license = " EPL-2.0 OR Apache-2.0"
+categories = ["network-programming"]
+description = "Janu Flow Examples"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+janu-flow = { git = "https://github.com/virtuehive/janu-flow.git", branch = "main"}
+janu-flow-python-types = {path = "../janu-flow-python-types/"}
+pyo3 = "0.14.5"
+
+[lib]
+name = "py_op"
+crate-type=["cdylib"]
+path="src/lib.rs"
+

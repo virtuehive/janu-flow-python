@@ -1,0 +1,46 @@
+[package]
+name = "janu-flow-python"
+version = "0.1.0"
+repository = "https://github.com/virtuehive/janu-flow-python"
+homepage = "http://tawedge.com"
+authors = ["kBrewok <wprayudi@gmail.com>",]
+edition = "2018"
+license = " EPL-2.0 OR Apache-2.0"
+categories = ["network-programming"]
+description = "Janu-Flow: janu-based data-flow programming framework for computations that span from the cloud to the device."
+readme = "../README.md"
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+janu-flow-python-types = { path = "../janu-flow-python-types"}
+uhlc = { version = "0.3"}
+pyo3 = "0.14.5"
+
+[features]
+abi-py36 = ["pyo3/abi3-py36"]
+extension-module = ["pyo3/extension-module"]
+default = ["extension-module", "abi-py36"]
+
+[lib]
+name = "janu_flow"
+crate-type = ["cdylib"]
+
+
+
+
+
+[package.metadata.maturin]
+classifier = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Rust",
+    "Intended Audience :: Developers",
+    "Development Status :: 1 - Alpha",
+    "Topic :: System :: Networking",
+    "License :: OSI Approved :: Apache Software License",
+    "License :: OSI Approved :: Eclipse Public License 2.0 (EPL-2.0)",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS :: MacOS X"
+]
+maintainer = "TAWHEED janu team, <janu@tawedge.com>"

@@ -1,0 +1,25 @@
+[package]
+name = "py-source"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+janu-flow = { git = "https://github.com/virtuehive/janu-flow.git", branch = "main"}
+async-trait = "0.1"
+janu-flow-python-types = {path = "../janu-flow-python-types/"}
+pyo3 = "0.14.5"
+
+
+[lib]
+name = "py_source"
+crate-type=["cdylib"]
+path="src/lib.rs"
+
+[package.metadata.januflow]
+id = "py_source"
+kind = "source"
+outputs=[ {id ="Data", type="bytes"}]
+
